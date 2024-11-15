@@ -1,0 +1,16 @@
+meta {
+  name: 2 protected - id
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8888/user/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{ID_TOKEN}}
+}

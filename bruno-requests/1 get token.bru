@@ -1,0 +1,30 @@
+meta {
+  name: 1 get token
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8888/get-token
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "username": "{{USERNAME}}",
+    "password": "{{PASSWORD}}",
+    "email": "{{EMAIL}}"
+  }
+}
+
+script:post-response {
+  access_token = res.body.access_token;
+  id_token = res.body.id_token;
+  bru.setEnvVar('ACCESS_TOKEN', access_token);
+  bru.setEnvVar('ID_TOKEN', id_token);
+}

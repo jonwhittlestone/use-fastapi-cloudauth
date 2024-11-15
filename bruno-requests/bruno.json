@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "use-fastapi-cloudauth",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
